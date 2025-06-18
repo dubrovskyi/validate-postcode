@@ -20,10 +20,13 @@ from validator_for_postcodes.countries.uk.postcode import UKPostcode
 
 
 if __name__ == '__main__':
+    parse_postcode("ASDKJF", country="uk")
+
     postcode_class = postcode_factory("uk")
-    print(parse_postcode("ASDKJF", country="uk"))
     obj = postcode_class("KLAJSOID")
     print(obj.postcode)
-    postcode_obj = UKPostcode("KLAJSOID")
     print(obj.validate())
-    print(obj.postcode)
+
+    postcode_obj = UKPostcode("QK23AC")
+    print(postcode_obj.postcode)
+    print(postcode_obj.validate())
