@@ -3,5 +3,6 @@ venv/
 .idea/
 validator_for_postcodes.egg-info/
 dist/
+build/
 
 **/__pycache__/*
