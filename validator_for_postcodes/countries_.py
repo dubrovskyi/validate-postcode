@@ -1,4 +1,4 @@
-from validate_postcode.countries.uk.postcode import UKPostcode
+from validator_for_postcodes.countries.uk.postcode import UKPostcode
 
 POSTCODES = {
     "uk": UKPostcode,

@@ -1,7 +1,7 @@
 import argparse
 from typing import Literal
 
-from validate_postcode.countries_ import postcode_factory
+from validator_for_postcodes.countries_ import postcode_factory
 
 
 def parse_postcode(postcode: str, country: Literal["uk"]):

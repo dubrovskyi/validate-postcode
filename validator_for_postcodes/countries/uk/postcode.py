@@ -1,7 +1,7 @@
 import re
 
-from validate_postcode.countries.uk.utils import format_postcode
-from validate_postcode.countries.uk.validator import UKValidator
+from validator_for_postcodes.countries.uk.utils import format_postcode
+from validator_for_postcodes.countries.uk.validator import UKValidator
 
 
 def find_district(outward: str) -> str:

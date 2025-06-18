@@ -1,4 +1,4 @@
-from validate_postcode.countries.uk.data import (
+from validator_for_postcodes.countries.uk.data import (
     MAX_POSTCODE_LENGTH,
     MIN_POSTCODE_LENGTH,
     MIN_OUTWARD_LENGTH,
@@ -10,7 +10,7 @@ from validate_postcode.countries.uk.data import (
     NEVER_SECOND,
     NEVER_FIRST,
 )
-from validate_postcode.countries.uk.regex_ import (
+from validator_for_postcodes.countries.uk.regex_ import (
     A9A,
     AA9A,
     double_digit_district,
@@ -22,9 +22,9 @@ from validate_postcode.countries.uk.regex_ import (
     NEVER_FIRST_PATTERN,
     NEVER_IN_INWARD_PATTERN,
 )
-from validate_postcode.countries.uk.utils import strip_postcode, is_inward_valid, is_outward_valid
-from validate_postcode.utils import validate_allowed, validate_length
-from validate_postcode.validator import Validator
+from validator_for_postcodes.countries.uk.utils import strip_postcode, is_inward_valid, is_outward_valid
+from validator_for_postcodes.utils import validate_allowed, validate_length
+from validator_for_postcodes.validator import Validator
 
 
 class UKValidator(Validator):

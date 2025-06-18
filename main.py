@@ -1,6 +1,6 @@
 import argparse
 
-from validate_postcode import parse_postcode
+from validator_for_postcodes import parse_postcode
 
 
 def main():

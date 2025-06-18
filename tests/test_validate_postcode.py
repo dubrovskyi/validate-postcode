@@ -1,6 +1,6 @@
 import pytest
 
-from validate_postcode.countries.uk.data import (
+from validator_for_postcodes.countries.uk.data import (
     ONLY_THIRD_CHAR,
     ONLY_FOURTH_CHAR,
     ONLY_SINGLE_DIGIT,
@@ -9,8 +9,8 @@ from validate_postcode.countries.uk.data import (
     NEVER_SECOND,
     NEVER_FIRST,
 )
-from validate_postcode.countries.uk.postcode import UKPostcode
-from validate_postcode.countries.uk.utils import format_postcode
+from validator_for_postcodes.countries.uk.postcode import UKPostcode
+from validator_for_postcodes.countries.uk.utils import format_postcode
 
 
 @pytest.mark.parametrize("postcode, message", [

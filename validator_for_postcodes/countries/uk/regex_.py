@@ -1,4 +1,4 @@
-from validate_postcode.countries.uk.data import (
+from validator_for_postcodes.countries.uk.data import (
     NEVER_FIRST,
     NEVER_SECOND,
     ONLY_THIRD_CHAR,

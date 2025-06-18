@@ -1,7 +1,7 @@
 .venv/
 venv/
 .idea/
-mylib.egg-info/
+validator_for_postcodes.egg-info/
 dist/
 
 **/__pycache__/*

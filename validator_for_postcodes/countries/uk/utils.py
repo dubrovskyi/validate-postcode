@@ -1,6 +1,6 @@
 import re
 
-from validate_postcode.countries.uk.regex_ import VALID_OUTWARD_PATTERN, VALID_INWARD_PATTERN
+from validator_for_postcodes.countries.uk.regex_ import VALID_OUTWARD_PATTERN, VALID_INWARD_PATTERN
 
 
 def clean_postcode(postcode: str) -> str:
