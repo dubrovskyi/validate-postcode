@@ -16,9 +16,14 @@ pip install validator-for-postcodes
 ## 🚀 Usage
 
 from validator_for_postcodes import parse_postcode, postcode_factory
+from validator_for_postcodes.countries.uk.postcode import UKPostcode
+
 
 if __name__ == '__main__':
     postcode_class = postcode_factory("uk")
     print(parse_postcode("ASDKJF", country="uk"))
     obj = postcode_class("KLAJSOID")
+    print(obj.postcode)
+    postcode_obj = UKPostcode("KLAJSOID")
+    print(obj.validate())
     print(obj.postcode)
