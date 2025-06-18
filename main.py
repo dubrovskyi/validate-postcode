@@ -1,17 +1,6 @@
 import argparse
-from typing import Literal
 
-from validate_postcode.countries_ import postcode_factory
-
-
-def parse_postcode(postcode: str, country: Literal["uk"]):
-    postcode_class = postcode_factory(country)
-    post_code_obj = postcode_class(postcode)
-    errors = post_code_obj.validate()
-    if errors:
-        print(errors)
-        return
-    print(f"VALID POSTCODE: '{post_code_obj.postcode}'")
+from validate_postcode import parse_postcode
 
 
 def main():

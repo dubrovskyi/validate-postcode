@@ -1,4 +1,7 @@
 .venv/
 venv/
 .idea/
+mylib.egg-info/
+dist/
 
+**/__pycache__/*
