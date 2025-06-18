@@ -1,14 +1,21 @@
 import pytest
 
-from countries.uk.data import ONLY_THIRD_CHAR, ONLY_FOURTH_CHAR, ONLY_SINGLE_DIGIT, ONLY_DOUBLE_DIGIT, NEVER_IN_INWARD
-from countries.uk.postcode import UKPostcode
+from validate_postcode.countries.uk.data import (
+    ONLY_THIRD_CHAR,
+    ONLY_FOURTH_CHAR,
+    ONLY_SINGLE_DIGIT,
+    ONLY_DOUBLE_DIGIT,
+    NEVER_IN_INWARD,
+)
+from validate_postcode.countries.uk.postcode import UKPostcode
+from validate_postcode.countries.uk.utils import format_postcode
 
 
 @pytest.mark.parametrize("postcode, message", [
     ("K1 3B", "Wrong postcode length: 5. Min: 6, Min: 8"),
     ("KT1 3B", "Postcode is INVALID: 'KT1 3B'. Allowed inward format '9AA'"),
-    ("BR44 3KK", f"Postcode is INVALID. Only single digits allowed with districts: {ONLY_SINGLE_DIGIT}"),
-    ("AB2 3BK", f"Postcode is INVALID. Only 2 digits allowed with districts: {ONLY_DOUBLE_DIGIT}"),
+    ("BR44 3BB", f"Postcode is INVALID. Only single digits allowed with districts: {ONLY_SINGLE_DIGIT}"),
+    ("AB2 3BA", f"Postcode is INVALID. Only 2 digits allowed with districts: {ONLY_DOUBLE_DIGIT}"),
     ("KI2 9AA", "Postcode is invalid. violated rule second restricted"),
     ("QK7 9AA", "Postcode is invalid. violated rule first restricted"),
     ("PPP9 9AA", "Outward is invalid: 'PPP9 9AA' allowed formats A9, AA9, A99, A9A, AA9A"),
@@ -18,6 +25,11 @@ from countries.uk.postcode import UKPostcode
 ])
 def test_postcode_validation(postcode, message):
     assert message in UKPostcode(postcode).validate()
+
+
+def test_postcode_formatting():
+    postcode = format_postcode("vv3a5ba")
+    assert postcode == "VV3A 5BA"
 
 
 @pytest.fixture(scope="session")
