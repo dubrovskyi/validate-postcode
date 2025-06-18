@@ -6,6 +6,8 @@ from validate_postcode.countries.uk.data import (
     ONLY_SINGLE_DIGIT,
     ONLY_DOUBLE_DIGIT,
     NEVER_IN_INWARD,
+    NEVER_SECOND,
+    NEVER_FIRST,
 )
 from validate_postcode.countries.uk.postcode import UKPostcode
 from validate_postcode.countries.uk.utils import format_postcode
@@ -16,8 +18,8 @@ from validate_postcode.countries.uk.utils import format_postcode
     ("KT1 3B", "Postcode is INVALID: 'KT1 3B'. Allowed inward format '9AA'"),
     ("BR44 3BB", f"Postcode is INVALID. Only single digits allowed with districts: {ONLY_SINGLE_DIGIT}"),
     ("AB2 3BA", f"Postcode is INVALID. Only 2 digits allowed with districts: {ONLY_DOUBLE_DIGIT}"),
-    ("KI2 9AA", "Postcode is invalid. violated rule second restricted"),
-    ("QK7 9AA", "Postcode is invalid. violated rule first restricted"),
+    ("QK7 9AA", f"Postcode is invalid. Never first character in outward: {NEVER_FIRST}"),
+    ("KI2 9AA", f"Postcode is invalid. Never second character in outward: {NEVER_SECOND}"),
     ("PPP9 9AA", "Outward is invalid: 'PPP9 9AA' allowed formats A9, AA9, A99, A9A, AA9A"),
     ("P9I 9AA", f"Postcode is INVALID. In format A9A last/3rd character only allowed: {ONLY_THIRD_CHAR}"),
     ("PA9C 9AA", f"Postcode is INVALID. In format AA9A 4th/last character only allowed: {ONLY_FOURTH_CHAR}"),

@@ -6,7 +6,9 @@ from validate_postcode.countries.uk.data import (
     ONLY_FOURTH_CHAR,
     ONLY_DOUBLE_DIGIT,
     NEVER_IN_INWARD,
-    ONLY_SINGLE_DIGIT
+    ONLY_SINGLE_DIGIT,
+    NEVER_SECOND,
+    NEVER_FIRST,
 )
 from validate_postcode.countries.uk.regex_ import (
     A9A,
@@ -101,7 +103,7 @@ class ValidateFirstRestricted(UKValidator):
     @staticmethod
     def to_validate(value: str):
         if validate_allowed(value, NEVER_FIRST_PATTERN):
-            return "Postcode is invalid. violated rule first restricted"
+            return f"Postcode is invalid. Never first character in outward: {NEVER_FIRST}"
 
 
 class ValidateSecondRestricted(UKValidator):
@@ -109,7 +111,7 @@ class ValidateSecondRestricted(UKValidator):
     @staticmethod
     def to_validate(value: str):
         if validate_allowed(value, NEVER_SECOND_PATTERN):
-            return "Postcode is invalid. violated rule second restricted"
+            return f"Postcode is invalid. Never second character in outward: {NEVER_SECOND}"
 
 
 class ValidateOnlySingleDigit(UKValidator):
